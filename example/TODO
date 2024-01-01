@@ -12,7 +12,8 @@
 	13.Seprate out the slave and master configurations
 	14.Support the consective write transaction in driver[Done] 
 	15.Support random delay in slave sequence [Done]
-	16.Support random slv error in slave sequence and well as in master driver [Done] 	
+	16.Support random slv error in slave sequence and well as in master driver [Done]
+	 	
 
 	Should I really do this ??
 	1. Slave Sequence should have a memory for AXI read and write.

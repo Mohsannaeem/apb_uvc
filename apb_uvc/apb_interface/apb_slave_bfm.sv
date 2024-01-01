@@ -61,10 +61,6 @@ interface apb_slave_bfm(apb_intf apb_slv_if);
     wait(apb_slv_if.pready);
     $display("Time %t",$time(),"Ready Asserted in Slave Monitor");
     delay=0;
-    // begin 
-    //    @(posedge apb_slv_if.clk);
-    //    delay++;
-    //  end
     slverr = apb_slv_if.pslverr;
     rdata  = apb_slv_if.prdata;
 

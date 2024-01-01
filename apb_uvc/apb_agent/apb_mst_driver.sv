@@ -46,7 +46,8 @@ task run_phase(uvm_phase phase);
 												apb_item.wdata,
 												apb_item.write,
 												apb_item.b2b_trans,
-												apb_item.rdata);
+												apb_item.rdata,
+                        apb_item.pslverr);
 		seq_item_port.item_done();
 	end 
 	`uvm_info(get_type_name(),"Run Phase Ended",UVM_FULL);

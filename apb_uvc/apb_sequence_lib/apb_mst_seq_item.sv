@@ -14,6 +14,7 @@ rand logic [31:0]	wdata;
 rand logic 		  	write;
 rand logic		  	b2b_trans;
 logic [31:0]      rdata;
+logic             pslverr;
 /*-------------------------------------------------------------------------------
 -- UVM Factory register
 -------------------------------------------------------------------------------*/
@@ -59,12 +60,13 @@ function bit do_compare(uvm_object rhs, uvm_comparer comparer);
 	(wdata	==	rhs_.wdata)&&
 	(write	==	rhs_.write)&&
 	(b2b_trans	==	rhs_.b2b_trans)&&
-  (rdata ==  rhs_.rdata));
+  (rdata ==  rhs_.rdata)&&
+  (pslverr ==  rhs_.pslverr));
 endfunction : do_compare
 function string convert2string();
 	string str;
 	str = super.convert2string();
-	$sformat(str,"\t%s\n address \t%0h\n wdata \t%0h\n write \t%0b\n b2b_trans \t%0b\n rdata \t%0h\n",str,address,wdata,write,b2b_trans,rdata);
+	$sformat(str,"\t%s\n address \t%0h\n wdata \t%0h\n write \t%0b\n b2b_trans \t%0b\n rdata \t%0h\n pslverr \t%0h\n",str,address,wdata,write,b2b_trans,rdata,pslverr);
   return str;	
 endfunction : convert2string
 function void do_print(uvm_printer printer);
@@ -77,6 +79,7 @@ function void do_record(uvm_recorder recorder);
   `uvm_record_field("write",write)
   `uvm_record_field("b2b_trans",b2b_trans)
   `uvm_record_field("rdata",rdata)
+  `uvm_record_field("pslverr",pslverr)
 endfunction
 	
 endclass : apb_mst_seq_item

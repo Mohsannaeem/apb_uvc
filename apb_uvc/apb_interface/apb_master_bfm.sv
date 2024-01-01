@@ -15,22 +15,24 @@ task execute(input logic [31:0]   address, //32b APB address
              input logic [31:0]   data,    //32b APB data
              input logic          rw, //Set 1 for write and 0 for read
              input logic          b2b_trans,
-             output logic [31:0]  rdata);
+             output logic [31:0]  rdata,
+             output logic         pslverr);
   if(rw)
     begin 
       $display("Write Transaction Started");
-      write_if(address,b2b_trans,data);
+      write_if(address,b2b_trans,data,pslverr);
       $display("Write Transaction Done");
     end
     else begin
       $display("Read Transaction Started");
-      read_if(address,b2b_trans,rdata);
+      read_if(address,b2b_trans,rdata,pslverr);
       $display("Read Transaction Started");
     end
 endtask : execute
 task write_if(input logic [31:0] address,
               input logic        b2b_trans,
-              input logic [31:0] wdata);
+              input logic [31:0] wdata,
+              output logic         pslverr);
   wait_for_reset();
   @(posedge apb_mst_if.clk);
   apb_mst_if.psel <= 1'b1;
@@ -44,12 +46,14 @@ task write_if(input logic [31:0] address,
     @(posedge apb_mst_if.clk);
     apb_mst_if.psel <= 1'b0;
     apb_mst_if.penable <= 1'b0;
-  end 
+  end
+  pslverr =apb_mst_if.pslverr; 
 endtask : write_if 
 
 task read_if(input logic [31:0] address,
              input logic        b2b_trans,
-             output logic[31:0] rdata);
+             output logic[31:0] rdata,
+             output logic       pslverr);
   wait_for_reset();
   @(posedge apb_mst_if.clk);
   apb_mst_if.psel <= 1'b1;
@@ -65,12 +69,14 @@ task read_if(input logic [31:0] address,
     apb_mst_if.psel <= 1'b0;
     apb_mst_if.penable <= 1'b0;
   end 
+  pslverr = apb_mst_if.pslverr;
 endtask : read_if
 
 task monitor(output logic [31:0] address,
             output logic[31:0]   wdata , 
             output logic [31:0]  rdata ,
-            output logic         write );
+            output logic         write,
+            output logic         pslverr);
   if(apb_mst_if.resetn ==0 && (apb_mst_if.psel ==1 || apb_mst_if.penable ==1)) begin 
     $display("Error", "APB Sel or Enable is asserted in reset state");
   end  
@@ -84,6 +90,7 @@ task monitor(output logic [31:0] address,
   wait(apb_mst_if.pready);
   wdata = apb_mst_if.pwdata;
   rdata = apb_mst_if.prdata;
+  pslverr = apb_mst_if.pslverr;
 
 endtask : monitor
 

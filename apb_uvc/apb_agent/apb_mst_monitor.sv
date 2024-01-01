@@ -43,7 +43,9 @@ task run_phase(uvm_phase phase);
   `uvm_info(get_type_name(),"Run Phase Started",UVM_FULL);
   forever 
   begin
-    apb_mst_bfm.monitor(apb_item.address,apb_item.wdata,apb_item.rdata,apb_item.write);
+    apb_mst_bfm.monitor(apb_item.address,apb_item.wdata,apb_item.rdata,apb_item.write,apb_item.pslverr);
+    if(apb_item.pslverr) 
+      `uvm_error(get_type_name(),"Slave Error for the following transaction"); 
     if(apb_item.write) begin
       write_counter++;
       `uvm_info(get_type_name(),$sformatf("\n/***** APB Write Transaction =%d",write_counter),UVM_MEDIUM);
@@ -54,7 +56,7 @@ task run_phase(uvm_phase phase);
       `uvm_info(get_type_name(),$sformatf("\n/***** APB Read Transaction =%d",read_counter),UVM_MEDIUM);
       apb_item.print();
     end 
-  end 
+  end
   `uvm_info(get_type_name(),"Run Phase Ended",UVM_FULL);
 endtask : run_phase
 
