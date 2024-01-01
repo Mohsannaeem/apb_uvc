@@ -10,7 +10,7 @@ class apb_base_test extends uvm_test;
 -------------------------------------------------------------------------------*/
 apb_env env;	
 apb_mst_virtual_sequence apb_mst_virt_seq;
-apb_slv_base_sequence apb_slv_base_seq;
+apb_slv_rnd_dly_sequence apb_slv_rnd_dly_seq;
 apb_env_config        apb_env_cfg;
 /*-------------------------------------------------------------------------------
 -- UVM Factory register
@@ -30,7 +30,7 @@ virtual function void build_phase(uvm_phase phase);
 	`uvm_info(get_type_name(),"Build Phase Started",UVM_FULL)
 	env = apb_env::type_id::create("env",this);
 	apb_mst_virt_seq = apb_mst_virtual_sequence::type_id::create("apb_mst_virt_seq");
-	apb_slv_base_seq = apb_slv_base_sequence::type_id::create("apb_slv_base_seq");
+	apb_slv_rnd_dly_seq = apb_slv_rnd_dly_sequence::type_id::create("apb_slv_rnd_dly_seq");
 	apb_env_cfg   = apb_env_config::type_id::create("apb_env_cfg",this);
   set_env_config(apb_env_cfg);
   `uvm_info(get_type_name(),"Build Phase Ended",UVM_FULL)
@@ -46,10 +46,11 @@ task run_phase(uvm_phase phase);
       begin 
         if(!(apb_mst_virt_seq.randomize())) 
           `uvm_fatal(get_type_name(),"Unable to randomize the virtual sequence");
-      	apb_mst_virt_seq.start(env.apb_mst_agnt.apb_mst_sqr);
+      	apb_mst_virt_seq.no_of_transaction=5;
+        apb_mst_virt_seq.start(env.apb_mst_agnt.apb_mst_sqr);
       end
       begin 
-      	apb_slv_base_seq.start(env.apb_slv_agnt.apb_slv_sqr);
+      	apb_slv_rnd_dly_seq.start(env.apb_slv_agnt.apb_slv_sqr);
       end
 	   join
     end

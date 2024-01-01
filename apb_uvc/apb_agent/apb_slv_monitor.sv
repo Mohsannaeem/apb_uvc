@@ -43,7 +43,8 @@ task run_phase(uvm_phase phase);
   `uvm_info(get_type_name(),"Run Phase Started",UVM_FULL);
   forever 
   begin
-    apb_slv_bfm.monitor(apb_item.address,apb_item.data,apb_item.rdata,apb_item.rw);
+    apb_slv_bfm.monitor(apb_item.address,apb_item.data,apb_item.rdata,
+                        apb_item.rw,apb_item.delay,apb_item.slv_err);
     if(apb_item.rw) begin
       write_counter++;
       `uvm_info(get_type_name(),$sformatf("\n/***** APB Write Transaction =%d",write_counter),UVM_MEDIUM);

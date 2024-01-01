@@ -7,12 +7,12 @@
 	7. Develope Sequence Item Library[Done] 
 	9. Seprate out the uvc and test_example [Done]
 	10.Write a virtual sequence for apb interface[Done]
-	11.Commit First Version of code on git
+	11.Commit First Version of code on git[Done]
 	12.Update the confluence page for apb verification plan 
 	13.Seprate out the slave and master configurations
-	14.Support the consective write transaction 
-	15.Support random delay in slave sequence  
-	16.Support random slv error in slave sequence and well as in master 	
+	14.Support the consective write transaction in driver[Done] 
+	15.Support random delay in slave sequence [Done]
+	16.Support random slv error in slave sequence and well as in master driver [Done] 	
 
 	Should I really do this ??
 	1. Slave Sequence should have a memory for AXI read and write.

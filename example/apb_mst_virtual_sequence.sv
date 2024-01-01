@@ -9,7 +9,7 @@ class apb_mst_virtual_sequence extends uvm_sequence;
   apb_read_sequence read_seq;
   apb_b2b_write_sequence b2b_write_seq;
   apb_b2b_read_sequence b2b_read_seq;
-  constraint no_of_trans {no_of_transaction inside {[5:20]};}
+  constraint no_of_trans {no_of_transaction inside {[50:100]};}
 /*-------------------------------------------------------------------------------
 -- UVM Factory register
 -------------------------------------------------------------------------------*/
@@ -25,25 +25,25 @@ class apb_mst_virtual_sequence extends uvm_sequence;
 
   task body();
     rand_seq  = apb_mst_base_sequence::type_id::create("rand_rd_wr_sequence");
+    b2b_read_seq  = apb_b2b_read_sequence::type_id::create("b2b_read_seq");
+    b2b_write_seq = apb_b2b_write_sequence::type_id::create("b2b_write_seq");
     write_seq = apb_write_sequence::type_id::create("Write_sequence");
     read_seq  = apb_read_sequence::type_id::create("Read Sequence");
-    b2b_write_seq = apb_b2b_write_sequence::type_id::create("b2b_write_seq");
-    b2b_read_seq  = apb_b2b_read_sequence::type_id::create("b2b_read_seq");
     `uvm_info(get_type_name(),$sformatf("No of no_of_trans",no_of_transaction),UVM_FULL);
     for (int i = 0; i < no_of_transaction; i++) begin
       rand_seq.start(m_sequencer);
-    end
-    for (int i = 0; i < no_of_transaction; i++) begin
-      write_seq.start(m_sequencer);
-    end
-    for (int i = 0; i < no_of_transaction; i++) begin
-      read_seq.start(m_sequencer);
     end
     for (int i = 0; i < no_of_transaction; i++) begin
       b2b_write_seq.start(m_sequencer);
     end
     for (int i = 0; i < no_of_transaction; i++) begin
       b2b_read_seq.start(m_sequencer);
+    end
+    for (int i = 0; i < no_of_transaction; i++) begin
+      write_seq.start(m_sequencer);
+    end
+    for (int i = 0; i < no_of_transaction; i++) begin
+      read_seq.start(m_sequencer);
     end
 
   endtask : body

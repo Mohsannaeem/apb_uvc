@@ -62,7 +62,8 @@ class apb_write_sequence extends  apb_mst_base_sequence;
     apb_seq_itm=apb_mst_seq_item::type_id::create("apb_seq_itm");
     start_item(apb_seq_itm);
     `uvm_info(get_type_name(),"Start Sequence Item",UVM_FULL)
-    if(!(apb_seq_itm.randomize() with{apb_seq_itm.write==1;}))
+    if(!(apb_seq_itm.randomize() with{apb_seq_itm.write==1;
+                                      apb_seq_itm.b2b_trans==0;}))
       `uvm_fatal(get_type_name(),"Unable to randomize the sequence item");
     finish_item(apb_seq_itm);
     `uvm_info(get_type_name(),"Finish Sequence Item",UVM_FULL)
@@ -97,7 +98,8 @@ class apb_read_sequence extends  apb_mst_base_sequence;
      
     apb_seq_itm=apb_mst_seq_item::type_id::create("apb_seq_itm");
     start_item(apb_seq_itm);
-    if(!(apb_seq_itm.randomize() with {apb_seq_itm.write==0;}))
+    if(!(apb_seq_itm.randomize() with {apb_seq_itm.write==0;
+                                      apb_seq_itm.b2b_trans==0;}))
       `uvm_fatal(get_type_name(),"Unable to randomize the seq item");
     finish_item(apb_seq_itm);  
   endtask : body

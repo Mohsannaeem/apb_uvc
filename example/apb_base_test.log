@@ -1,0 +1,1926 @@
+# //  Questa Sim-64
+# //  Version 2021.1 win64 Jan 19 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim apb_tb_top_db -work ./work "+UVM_TESTNAME=apb_base_test" "+UVM_REPORT" "+UVM_VERBOSITY=UVM_FULL" -l apb_base_test.log -sv_seed random -do "do wave.do; run -a; q" -classdebug 
+# Start time: 11:18:20 on Dec 30,2023
+# Loading sv_std.std
+# Loading work.apb_master_bfm(fast)
+# Loading work.apb_slave_bfm(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.apb_seq_pkg(fast)
+# Loading work.apb_env_pkg(fast)
+# Loading work.apb_test_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.apb_seq_pkg_sv_unit(fast)
+# Loading work.apb_tb_top(fast)
+# Loading work.apb_intf(fast__1)
+# Loading work.apb_master_bfm(fast__4)
+# Loading work.apb_slave_bfm(fast__4)
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_mst_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.slverr' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.delay' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.rw' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.rdata' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.wdata' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.address' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_slv_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_mst_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.write' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_mst_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_mst_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.rdata' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_mst_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_mst_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.wdata' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_mst_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.monitor' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_mst_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.address' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg File: ../apb_uvc/./apb_agent/apb_mst_monitor.sv Line: 46
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.init_zeros' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 41
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.execute' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 45
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.execute' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 45
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.address' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 45
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.execute' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 45
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.data' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 45
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.execute' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 45
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.rw' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 45
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.execute' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 45
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.b2b_trans' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 45
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.execute' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 45
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_mst_bfm.rdata' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_mst_driver File: ../apb_uvc/./apb_agent/apb_mst_driver.sv Line: 45
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.init_zeros' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 35
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.wait_for_reset' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 37
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.setup_phase' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 43
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.access_phase' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 49
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.setup_phase' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 43
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.address' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 43
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.setup_phase' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 43
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.rw' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 43
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.access_phase' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 49
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.rdata' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 49
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.access_phase' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 49
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.delay' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 49
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.access_phase' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 49
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.slverr' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 49
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.access_phase' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 49
+# ** Warning: (vsim-8887) Virtual interface element 'this.apb_slv_bfm.wdata' uses an interface with interface ports.
+#    Time: 0 fs  Iteration: 0  Region: /apb_env_pkg::apb_slv_driver File: ../apb_uvc/./apb_agent/apb_slv_driver.sv Line: 49
+# Loading C:/questasim64_2021.1/uvm-1.1d\win64\uvm_dpi.dll
+# Sv_Seed = 2715796610
+# do wave.do
+#  run -a
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test apb_base_test...
+# UVM_INFO apb_base_test.sv(30) @ 0: uvm_test_top [apb_base_test] Build Phase Started
+# UVM_INFO apb_base_test.sv(65) @ 0: uvm_test_top [apb_base_test] Dummy Function
+# UVM_INFO apb_base_test.sv(36) @ 0: uvm_test_top [apb_base_test] Build Phase Ended
+# UVM_INFO ../apb_uvc/./apb_env/apb_env.sv(30) @ 0: uvm_test_top.env [apb_env] Build Phase Started
+# UVM_INFO ../apb_uvc/./apb_env/apb_env.sv(35) @ 0: uvm_test_top.env [apb_env] Build Phase Ended
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_agent.sv(32) @ 0: uvm_test_top.env.apb_mst_agnt [apb_mst_agent] Build Phase Started
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_agent.sv(40) @ 0: uvm_test_top.env.apb_mst_agnt [apb_mst_agent] Build Phase Ended
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_driver.sv(30) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_drv [apb_mst_driver] Build Phase Started
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_driver.sv(35) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_drv [apb_mst_driver] Build Phase Ended
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(32) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] Build Phase Started
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(38) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] Build Phase Ended
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(32) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] Build Phase Started
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(38) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] Build Phase Ended
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_agent.sv(48) @ 0: uvm_test_top.env.apb_mst_agnt [apb_mst_agent] Connect Phase Started
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_agent.sv(53) @ 0: uvm_test_top.env.apb_mst_agnt [apb_mst_agent] Connect Phase Ended
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(339) @ 0: reporter [Questa UVM] End Of Elaboration
+# UVM_INFO apb_base_test.sv(41) @ 0: uvm_test_top [apb_base_test] Run Phase Started
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'run'
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(43) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] Run Phase Started
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'run'
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(43) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] Run Phase Started
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_driver.sv(40) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_drv [apb_mst_driver] Run Phase Started
+# ** Warning: (vsim-PLI-3070) $sformatf : Too many arguments.
+#    Time: 0 fs  Iteration: 52  Process: /uvm_pkg::uvm_sequence_base::start/#FORK#294_4f61ef17 File: apb_mst_virtual_sequence.sv Line: 32
+# UVM_INFO apb_mst_virtual_sequence.sv(32) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@apb_mst_virt_seq [apb_mst_virtual_sequence] No of no_of_trans         5
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(204) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Slave Sequence Body Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(26) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Body Task started
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'pre_reset'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'pre_reset'
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(30) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Start Sequence Item
+# Write Transaction Started
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'reset'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'reset'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'post_reset'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'post_reset'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'pre_configure'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'pre_configure'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'configure'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'configure'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'post_configure'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'post_configure'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'pre_main'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'pre_main'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'main'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'main'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'post_main'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'post_main'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'pre_shutdown'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'shutdown'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'shutdown'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+# UVM_INFO verilog_src/uvm-1.1d/src/seq/uvm_sequencer_base.svh(1384) @ 0: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr [PHASESEQ] No default phase sequence for phase 'post_shutdown'
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(38) @ 10000000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] APB Reset Deasseted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 10000000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 10150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	32d420b5
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 10150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	32d420b5
+#  data 	x
+#  rw 	1
+#  rdata 	34c2e537
+#  slv_err 	0
+#  delay 	        15
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 10150000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time             25000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 25250000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =          1
+# 
+#  address 	32d420b5
+#  data 	47cac48b
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 25250000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =          1
+# 	
+#  address 	32d420b5
+#  wdata 	47cac48b
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(33) @ 25250000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Finish Sequence Item
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(34) @ 25250000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Body Task Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(26) @ 25250000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(30) @ 25250000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Start Sequence Item
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 25350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 25350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 25450000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	35f2b312
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 25450000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 25450000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	35f2b312
+#  data 	47cac48b
+#  rw 	0
+#  rdata 	87541a33
+#  slv_err 	0
+#  delay 	        10
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 25450000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time             36000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 35550000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =          1
+# 
+#  address 	35f2b312
+#  data 	47cac48b
+#  rw 	0
+#  rdata 	87541a33
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 35550000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =          1
+# 	
+#  address 	35f2b312
+#  wdata 	47cac48b
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	87541a33
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(33) @ 35550000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Finish Sequence Item
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(34) @ 35550000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Body Task Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(26) @ 35550000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(30) @ 35550000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Start Sequence Item
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 35650000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 35650000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 35750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	c5a3f55c
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 35750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 35750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	c5a3f55c
+#  data 	47cac48b
+#  rw 	0
+#  rdata 	206c8852
+#  slv_err 	0
+#  delay 	        10
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 35750000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time             46000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 45850000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =          2
+# 
+#  address 	c5a3f55c
+#  data 	0
+#  rw 	0
+#  rdata 	206c8852
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 45850000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =          2
+# 	
+#  address 	c5a3f55c
+#  wdata 	0
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	206c8852
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(33) @ 45850000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Finish Sequence Item
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(34) @ 45850000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Body Task Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(26) @ 45850000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(30) @ 45850000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Start Sequence Item
+# Write Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 45950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 45950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 46050000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	cb363df4
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 46050000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	cb363df4
+#  data 	47cac48b
+#  rw 	1
+#  rdata 	589b7c1c
+#  slv_err 	0
+#  delay 	         1
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 46050000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time             47000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 47150000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =          2
+# 
+#  address 	cb363df4
+#  data 	7bd96bff
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 47150000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =          2
+# 	
+#  address 	cb363df4
+#  wdata 	7bd96bff
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(33) @ 47150000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Finish Sequence Item
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(34) @ 47150000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Body Task Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(26) @ 47150000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(30) @ 47150000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Start Sequence Item
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 47250000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 47250000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 47350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	2d28acb2
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 47350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 47350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	2d28acb2
+#  data 	7bd96bff
+#  rw 	0
+#  rdata 	dd3b26d6
+#  slv_err 	0
+#  delay 	        11
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 47350000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time             58000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 58450000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =          3
+# 
+#  address 	2d28acb2
+#  data 	7bd96bff
+#  rw 	0
+#  rdata 	dd3b26d6
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 58450000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =          3
+# 	
+#  address 	2d28acb2
+#  wdata 	7bd96bff
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	dd3b26d6
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(33) @ 58550000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Finish Sequence Item
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(34) @ 58550000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@rand_rd_wr_sequence [apb_mst_base_sequence] Body Task Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 58550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 58550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# Write Transaction Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 58750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	37395f52
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 58750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	37395f52
+#  data 	7bd96bff
+#  rw 	1
+#  rdata 	6092551d
+#  slv_err 	0
+#  delay 	        14
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 58750000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time             73000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 72850000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =          3
+# 
+#  address 	37395f52
+#  data 	b5c88b04
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 72850000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =          3
+# 	
+#  address 	37395f52
+#  wdata 	b5c88b04
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# Write Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 72950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 72950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 73050000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	32e9771
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 73050000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	32e9771
+#  data 	b5c88b04
+#  rw 	1
+#  rdata 	63efc08c
+#  slv_err 	0
+#  delay 	         0
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 73050000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 73150000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =          4
+# 	
+#  address 	32e9771
+#  wdata 	904b5751
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# Write Transaction Started
+# Time             73000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 73250000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =          4
+# 
+#  address 	32e9771
+#  data 	904b5751
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 73250000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 73250000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 73350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	1c326fd8
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 73350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	1c326fd8
+#  data 	904b5751
+#  rw 	1
+#  rdata 	4fdc051f
+#  slv_err 	0
+#  delay 	         8
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 73350000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time             81000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 81450000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =          5
+# 
+#  address 	1c326fd8
+#  data 	97bd3a12
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 81450000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =          5
+# 	
+#  address 	1c326fd8
+#  wdata 	97bd3a12
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# Write Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 81550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 81550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 81650000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	a640be1
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 81650000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	a640be1
+#  data 	97bd3a12
+#  rw 	1
+#  rdata 	cfb47096
+#  slv_err 	0
+#  delay 	         3
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 81650000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time             85000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 84750000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =          6
+# 
+#  address 	a640be1
+#  data 	5e873791
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 84750000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =          6
+# 	
+#  address 	a640be1
+#  wdata 	5e873791
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# Write Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 84850000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 84850000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 84950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	23095632
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 84950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	23095632
+#  data 	5e873791
+#  rw 	1
+#  rdata 	d61d7066
+#  slv_err 	0
+#  delay 	         3
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 84950000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time             88000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 88050000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =          7
+# 
+#  address 	23095632
+#  data 	51ecc503
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 88050000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =          7
+# 	
+#  address 	23095632
+#  wdata 	51ecc503
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 88150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 88150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 88250000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	7def5cea
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 88250000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 88250000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	7def5cea
+#  data 	51ecc503
+#  rw 	0
+#  rdata 	d2620d0a
+#  slv_err 	0
+#  delay 	         3
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 88250000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time             91000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 91350000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =          4
+# 
+#  address 	7def5cea
+#  data 	51ecc503
+#  rw 	0
+#  rdata 	d2620d0a
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 91350000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =          4
+# 	
+#  address 	7def5cea
+#  wdata 	51ecc503
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	d2620d0a
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 91450000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 91450000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 91550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	a4f7f06a
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 91550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 91550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	a4f7f06a
+#  data 	51ecc503
+#  rw 	0
+#  rdata 	11118a9f
+#  slv_err 	0
+#  delay 	        11
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 91550000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            103000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 102650000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =          5
+# 
+#  address 	a4f7f06a
+#  data 	0
+#  rw 	0
+#  rdata 	11118a9f
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 102650000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =          5
+# 	
+#  address 	a4f7f06a
+#  wdata 	0
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	11118a9f
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 102750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 102750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 102850000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	e43e66e9
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 102850000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 102850000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	e43e66e9
+#  data 	51ecc503
+#  rw 	0
+#  rdata 	7241e78f
+#  slv_err 	0
+#  delay 	        13
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 102850000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            116000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 115950000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =          6
+# 
+#  address 	e43e66e9
+#  data 	0
+#  rw 	0
+#  rdata 	7241e78f
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 115950000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =          6
+# 	
+#  address 	e43e66e9
+#  wdata 	0
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	7241e78f
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 116050000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 116050000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 116150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	6f9eb8c3
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 116150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 116150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	6f9eb8c3
+#  data 	51ecc503
+#  rw 	0
+#  rdata 	600882f0
+#  slv_err 	0
+#  delay 	         6
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 116150000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            122000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 122250000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =          7
+# 
+#  address 	6f9eb8c3
+#  data 	0
+#  rw 	0
+#  rdata 	600882f0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 122250000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =          7
+# 	
+#  address 	6f9eb8c3
+#  wdata 	0
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	600882f0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 122350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 122350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 122450000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	a76d6257
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 122450000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 122450000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	a76d6257
+#  data 	51ecc503
+#  rw 	0
+#  rdata 	1cf91240
+#  slv_err 	0
+#  delay 	         3
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 122450000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            126000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 125550000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =          8
+# 
+#  address 	a76d6257
+#  data 	0
+#  rw 	0
+#  rdata 	1cf91240
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 125550000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =          8
+# 	
+#  address 	a76d6257
+#  wdata 	0
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	1cf91240
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(61) @ 125550000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(64) @ 125550000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Start Sequence Item
+# Write Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 125650000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 125650000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 125750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	bfb19a57
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 125750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	bfb19a57
+#  data 	51ecc503
+#  rw 	1
+#  rdata 	de0e12f2
+#  slv_err 	0
+#  delay 	         1
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 125750000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            127000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 126850000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =          8
+# 
+#  address 	bfb19a57
+#  data 	b0145256
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 126850000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =          8
+# 	
+#  address 	bfb19a57
+#  wdata 	b0145256
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(69) @ 126950000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Finish Sequence Item
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(70) @ 126950000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Body Task Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 126950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(61) @ 126950000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 126950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(64) @ 126950000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Start Sequence Item
+# Write Transaction Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 127150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	fa871ccd
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 127150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	fa871ccd
+#  data 	b0145256
+#  rw 	1
+#  rdata 	364bcf7b
+#  slv_err 	0
+#  delay 	        15
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 127150000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            142000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 142250000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =          9
+# 
+#  address 	fa871ccd
+#  data 	38770794
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 142250000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =          9
+# 	
+#  address 	fa871ccd
+#  wdata 	38770794
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(69) @ 142350000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Finish Sequence Item
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(70) @ 142350000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Body Task Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 142350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(61) @ 142350000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 142350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(64) @ 142350000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Start Sequence Item
+# Write Transaction Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 142550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	3e1795cd
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 142550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	3e1795cd
+#  data 	38770794
+#  rw 	1
+#  rdata 	e7713606
+#  slv_err 	0
+#  delay 	         9
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 142550000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            152000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 151650000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =         10
+# 
+#  address 	3e1795cd
+#  data 	31c2b80c
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 151650000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =         10
+# 	
+#  address 	3e1795cd
+#  wdata 	31c2b80c
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(69) @ 151750000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Finish Sequence Item
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(70) @ 151750000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Body Task Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 151750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(61) @ 151750000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 151750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(64) @ 151750000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Start Sequence Item
+# Write Transaction Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 151950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	ecc80e14
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 151950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	ecc80e14
+#  data 	31c2b80c
+#  rw 	1
+#  rdata 	f6d4aba9
+#  slv_err 	0
+#  delay 	        10
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 151950000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            162000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 162050000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =         11
+# 
+#  address 	ecc80e14
+#  data 	d26b8970
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 162050000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =         11
+# 	
+#  address 	ecc80e14
+#  wdata 	d26b8970
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(69) @ 162150000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Finish Sequence Item
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(70) @ 162150000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Body Task Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 162150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(61) @ 162150000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 162150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(64) @ 162150000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Start Sequence Item
+# Write Transaction Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 162350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	568e7a42
+#  data 	x
+#  rw 	1
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 162350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# 
+#  address 	568e7a42
+#  data 	d26b8970
+#  rw 	1
+#  rdata 	6c87d366
+#  slv_err 	0
+#  delay 	         4
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 162350000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            166000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(50) @ 166450000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Write Transaction =         12
+# 
+#  address 	568e7a42
+#  data 	f0511c20
+#  rw 	1
+#  rdata 	0
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(49) @ 166450000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Write Transaction =         12
+# 	
+#  address 	568e7a42
+#  wdata 	f0511c20
+#  write 	1
+#  b2b_trans 	x
+#  rdata 	0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Write Transaction Done
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(69) @ 166550000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Finish Sequence Item
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(70) @ 166550000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Write_sequence [apb_write_sequence] Body Task Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 166550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(97) @ 166550000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Read Sequence [apb_read_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 166550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# Read Transaction Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 166750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	d8184c8c
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 166750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 166750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	d8184c8c
+#  data 	f0511c20
+#  rw 	0
+#  rdata 	eb2f2c87
+#  slv_err 	0
+#  delay 	         1
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 166750000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            168000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 167850000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =          9
+# 
+#  address 	d8184c8c
+#  data 	f0511c20
+#  rw 	0
+#  rdata 	eb2f2c87
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 167850000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =          9
+# 	
+#  address 	d8184c8c
+#  wdata 	f0511c20
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	eb2f2c87
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 167950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(97) @ 167950000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Read Sequence [apb_read_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 167950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# Read Transaction Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 168150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	3e6eb675
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 168150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 168150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	3e6eb675
+#  data 	f0511c20
+#  rw 	0
+#  rdata 	cd3615d6
+#  slv_err 	0
+#  delay 	         5
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 168150000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            173000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 173250000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =         10
+# 
+#  address 	3e6eb675
+#  data 	0
+#  rw 	0
+#  rdata 	cd3615d6
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 173250000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =         10
+# 	
+#  address 	3e6eb675
+#  wdata 	0
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	cd3615d6
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 173350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(97) @ 173350000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Read Sequence [apb_read_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 173350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# Read Transaction Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 173550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	ce46ff66
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 173550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 173550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	ce46ff66
+#  data 	f0511c20
+#  rw 	0
+#  rdata 	42209717
+#  slv_err 	0
+#  delay 	         0
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 173550000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 173650000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =         11
+# 	
+#  address 	ce46ff66
+#  wdata 	0
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	42209717
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# Time            174000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 173750000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =         11
+# 
+#  address 	ce46ff66
+#  data 	0
+#  rw 	0
+#  rdata 	42209717
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 173750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(97) @ 173750000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Read Sequence [apb_read_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 173750000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# Read Transaction Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 173950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	91ccaa70
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 173950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 173950000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	91ccaa70
+#  data 	f0511c20
+#  rw 	0
+#  rdata 	2f37f23c
+#  slv_err 	0
+#  delay 	        12
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 173950000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            186000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 186050000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =         12
+# 
+#  address 	91ccaa70
+#  data 	0
+#  rw 	0
+#  rdata 	2f37f23c
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 186050000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =         12
+# 	
+#  address 	91ccaa70
+#  wdata 	0
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	2f37f23c
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 186150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_mst_seq_lib.sv(97) @ 186150000: uvm_test_top.env.apb_mst_agnt.apb_mst_sqr@@Read Sequence [apb_read_sequence] Body Task started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 186150000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# Read Transaction Started
+# APB slave BFMAPB Sel Asserted
+# APB slave BFMAPB Enable Asserted
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(214) @ 186350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Done
+# 
+#  address 	faf645f2
+#  data 	x
+#  rw 	0
+#  rdata 	x
+#  slv_err 	x
+#  delay 	         x
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_req  apb_slv_seq_item  -     @870 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(217) @ 186350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Start
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(223) @ 186350000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] Read Request Recieved
+# 
+#  address 	faf645f2
+#  data 	f0511c20
+#  rw 	0
+#  rdata 	a3d2f1e2
+#  slv_err 	0
+#  delay 	        14
+# 
+# ----------------------------------------------
+# Name             Type              Size  Value
+# ----------------------------------------------
+# apb_slv_seq_rsp  apb_slv_seq_item  -     @874 
+# ----------------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_driver.sv(47) @ 186350000: uvm_test_top.env.apb_slv_agnt.apb_slv_drv [apb_slv_driver] Asserting APB Ready Asserted
+# Time            200000000Ready Asserted in Slave Monitor
+# UVM_INFO ../apb_uvc/./apb_agent/apb_slv_monitor.sv(55) @ 200450000: uvm_test_top.env.apb_slv_agnt.apb_slv_mntr [apb_slv_monitor] 
+# /***** APB Read Transaction =         13
+# 
+#  address 	faf645f2
+#  data 	0
+#  rw 	0
+#  rdata 	a3d2f1e2
+#  slv_err 	0
+#  delay 	         0
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_slv_seq_item  -     @834 
+# ---------------------------------------
+# UVM_INFO ../apb_uvc/./apb_agent/apb_mst_monitor.sv(54) @ 200450000: uvm_test_top.env.apb_mst_agnt.apb_mst_mntr [apb_mst_monitor] 
+# /***** APB Read Transaction =         13
+# 	
+#  address 	faf645f2
+#  wdata 	0
+#  write 	0
+#  b2b_trans 	x
+#  rdata 	a3d2f1e2
+# 
+# ---------------------------------------
+# Name      Type              Size  Value
+# ---------------------------------------
+# apb_item  apb_mst_seq_item  -     @682 
+# ---------------------------------------
+# Read Transaction Started
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(233) @ 200550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Response Ended
+# UVM_INFO ../apb_uvc/./apb_sequence_lib/apb_slv_seq_lib.sv(212) @ 200550000: uvm_test_top.env.apb_slv_agnt.apb_slv_sqr@@apb_slv_rnd_dly_seq [apb_slv_rnd_dly_sequence] APB Request Started
+# UVM_INFO apb_base_test.sv(62) @ 500000000: uvm_test_top [apb_base_test] Run Phase Ended
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1243) @ 500000000: reporter [TEST_DONE] All end-of-test objections have been dropped. Calling stop tasks
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 500000000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  289
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [PHASESEQ]    26
+# [Questa UVM]     3
+# [RNTST]     1
+# [TEST_DONE]     2
+# [apb_base_test]     5
+# [apb_env]     2
+# [apb_mst_agent]     4
+# [apb_mst_base_sequence]    20
+# [apb_mst_driver]     3
+# [apb_mst_monitor]    28
+# [apb_mst_virtual_sequence]     1
+# [apb_read_sequence]     5
+# [apb_slv_driver]    26
+# [apb_slv_monitor]    28
+# [apb_slv_rnd_dly_sequence]   115
+# [apb_write_sequence]    20
+# ** Note: $finish    : C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 500 ns  Iteration: 54  Instance: /apb_tb_top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at C:/questasim64_2021.1/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+#  q
+# End time: 16:17:26 on Jan 01,2024, Elapsed time: 52:59:06
+# Errors: 0, Warnings: 51

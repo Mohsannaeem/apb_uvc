@@ -46,7 +46,7 @@ task run_phase(uvm_phase phase);
 		seq_item_port.get_next_item(apb_slv_rsp);
 		`uvm_info(get_type_name(),"Asserting APB Ready Asserted",UVM_FULL);
 		//Access Phase Activity
-		apb_slv_bfm.access_phase(apb_slv_rsp.rdata,apb_slv_rsp.data);
+		apb_slv_bfm.access_phase(apb_slv_rsp.rdata,apb_slv_rsp.delay,apb_slv_rsp.slv_err,apb_slv_rsp.data);
 		seq_item_port.item_done();
 	end
 endtask : run_phase
