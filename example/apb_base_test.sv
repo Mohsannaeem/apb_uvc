@@ -56,6 +56,7 @@ task run_phase(uvm_phase phase);
     end
     begin  
 	     #500ns;
+       `uvm_fatal(get_type_name(),"Watchdog timer expired");
     end 
   join_any
 	phase.drop_objection(this);

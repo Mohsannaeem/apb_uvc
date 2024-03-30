@@ -15,11 +15,11 @@
 	16.Support random slv error in slave sequence and well as in master driver [Done]
 
 	17.Support APB4 Interface from agent configuration and add the factory override for the sequence item
-	18.Add Assertions in apb interface
+	18.Add Assertions in apb interface [Done]
 	19.Add Call Backs  for user and Error Injections
 	20.Add the Scoreboard which will have memory model to checked write data while reading 
 	21.Need to add coverage  monitors
-	
+
 	Should I really do this ??
 	1. Slave Sequence should have a memory for AXI read and write.
 	2. Peak RDL Integration 

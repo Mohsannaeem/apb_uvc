@@ -35,12 +35,33 @@ interface apb_intf(input logic clk,input logic resetn);
   property pslverr_xz;
     @(posedge clk) disable iff(!resetn) !$isunknown(pslverr);
   endproperty : pslverr_xz
-
+  // Sequences 
+  sequence setup_phase_write;
+    $rose(psel) and $rose(pwrite) and !pready and !penable;
+  endsequence : setup_phase_write
+  sequence setup_phase_read ;
+    $rose(psel) and $rose(!pwrite) and !pready and !penable;
+  endsequence : setup_phase_read
+  sequence access_phase_write;
+    $rose(penable) and $rose(pready) and $stable(psel) and $stable(pwrite) and $stable(paddr) and $stable(pwdata);
+  endsequence 
+  sequence access_phase_read; 
+    $rose(penable) and $rose(pready) and $stable(psel) and $stable(!pwrite) and $stable(paddr);
+  endsequence : access_phase_read
+  property read_test;
+    @(posedge clk) disable iff (!resetn)
+      setup_phase_read |=> access_phase_read ; 
+  endproperty : read_test
+  property write_test ;
+    @(posedge clk) disable iff(!resetn)
+      setup_phase_write |=> access_phase_write;
+  endproperty
   // Asserting the properties
-  assert property (psel_xz)    else $error("psel_xs    Failed : PSEL is x or z"); 
-  assert property (penable_xz) else $error("penable_xs Failed : PENABLE is x or z"); 
-  assert property (pwrite_xz)  else $error("pwrite_xz  Failed : PWRITE is x or z"); 
-  assert property (pready_xz)  else $error("pready_xz  Failed : PREADY is x or z"); 
-  assert property (pslverr_xz) else $error("pslverr_xz Failed : PSEL is x or z"); 
-
+  assert property (psel_xz)    else $error("Assertion psel_xs    Failed : PSEL is x or z"); 
+  assert property (penable_xz) else $error("Assertion penable_xs Failed : PENABLE is x or z"); 
+  assert property (pwrite_xz)  else $error("Assertion pwrite_xz  Failed : PWRITE is x or z"); 
+  assert property (pready_xz)  else $error("Assertion pready_xz  Failed : PREADY is x or z"); 
+  assert property (pslverr_xz) else $error("Assertion pslverr_xz Failed : PSEL is x or z"); 
+  assert property (read_test)  else $error($sformatf ("Assertion read_test failed with psel value : %b, pwrite value : %b, pready value : %b, penable value %b , paddr: %h, prdata %h,",$sampled(psel),$sampled(pwrite),$sampled(pready),$sampled(penable),$sampled(paddr),$sampled(prdata))); 
+  assert property (write_test) else $error($sformatf ("Assertion write_test failed with psel value : %b, pwrite value : %b, pready value : %b, penable value %b , paddr: %h, pwdata %h,",$sampled(psel),$sampled(pwrite),$sampled(pready),$sampled(penable),$sampled(paddr),$sampled(pwdata))); 
 endinterface
