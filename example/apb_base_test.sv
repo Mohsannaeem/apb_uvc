@@ -2,16 +2,16 @@
 // Developer Name : Mohsan Naeem 
 // Contact info   : mohsannaeem1576@gmail.com
 // Module Name    : apb_test_pkg
-// Description    : Dummy Test Package which can be used to create new test pkg
+// Description    : Base Test  which can be used an example to make a uvc
 ///////////////////////////////////////////////////////////////////////
 class apb_base_test extends uvm_test;
 /*-------------------------------------------------------------------------------
 -- Interface, port, fields
 -------------------------------------------------------------------------------*/
-apb_env env;	
+apb_env                  env;	
 apb_mst_virtual_sequence apb_mst_virt_seq;
 apb_slv_rnd_dly_sequence apb_slv_rnd_dly_seq;
-apb_env_config        apb_env_cfg;
+apb_env_config           apb_env_cfg;
 /*-------------------------------------------------------------------------------
 -- UVM Factory register
 -------------------------------------------------------------------------------*/
