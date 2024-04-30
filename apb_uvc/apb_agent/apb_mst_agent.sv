@@ -32,7 +32,7 @@ class apb_mst_agent extends uvm_agent;
 		`uvm_info(get_type_name(),"Build Phase Started",UVM_FULL);
 		if(!(uvm_config_db#(apb_agent_config)::get(this, "", "agnt_cfg",apb_agnt_cfg)))
         `uvm_fatal(get_type_name(),"Unable to get the agent config");
-    if(apb_agnt_cfg.is_active == 1) begin
+    if(apb_agnt_cfg.is_mst_active == 1) begin
       apb_mst_sqr 	= apb_mst_sequencer::type_id::create("apb_mst_sqr",this);
 		  apb_mst_drv 	= apb_mst_driver::type_id::create("apb_mst_drv",this);
 		end
@@ -46,7 +46,7 @@ class apb_mst_agent extends uvm_agent;
 	function void connect_phase(uvm_phase phase);
 		super.connect_phase(phase);
 		`uvm_info(get_type_name(),"Connect Phase Started",UVM_FULL);
-		if(apb_agnt_cfg.is_active == 1)
+		if(apb_agnt_cfg.is_mst_active == 1)
 		begin
 			apb_mst_drv.seq_item_port.connect(apb_mst_sqr.seq_item_export);
 		end

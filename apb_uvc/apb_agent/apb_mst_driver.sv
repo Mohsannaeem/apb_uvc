@@ -9,7 +9,7 @@ class apb_mst_driver extends  uvm_driver#(apb_mst_seq_item);
 /*-------------------------------------------------------------------------------
 -- Interface, port, fields
 -------------------------------------------------------------------------------*/
-virtual interface apb_master_bfm apb_mst_bfm;
+virtual interface apb_mst_driver_bfm apb_mst_drv_bfm;
 apb_mst_seq_item apb_item;
 apb_agent_config apb_agnt_cfg;
 /*-------------------------------------------------------------------------------
@@ -31,18 +31,18 @@ function void build_phase (uvm_phase phase);
 	super.build_phase(phase);
   if(!(uvm_config_db#(apb_agent_config)::get(this, "", "agnt_cfg",apb_agnt_cfg)))
       `uvm_fatal(get_type_name(),"Unable to get the agent config");
-  apb_mst_bfm = apb_agnt_cfg.apb_mst_bfm; 
+  apb_mst_drv_bfm = apb_agnt_cfg.apb_mst_drv_bfm; 
   `uvm_info(get_type_name(),"Build Phase Ended",UVM_FULL);
 endfunction : build_phase 
 
 task run_phase(uvm_phase phase);
 	super.run_phase(phase);
 	`uvm_info(get_type_name(),"Run Phase Started",UVM_FULL);
-	apb_mst_bfm.init_zeros();
+	apb_mst_drv_bfm.init_zeros();
 	forever 
 	begin
 		seq_item_port.get_next_item(apb_item);
-		apb_mst_bfm.execute(apb_item.address,
+		apb_mst_drv_bfm.execute(apb_item.address,
 												apb_item.wdata,
 												apb_item.write,
 												apb_item.b2b_trans,

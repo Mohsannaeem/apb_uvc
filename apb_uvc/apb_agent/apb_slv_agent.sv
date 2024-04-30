@@ -31,7 +31,7 @@ class apb_slv_agent extends uvm_agent;
 		super.build_phase(phase);
     if(!(uvm_config_db#(apb_agent_config)::get(this, "", "agnt_cfg",apb_agnt_cfg)))
         `uvm_fatal(get_type_name(),"Unable to get the agent config");
-    if(apb_agnt_cfg.is_active == 1) begin
+    if(apb_agnt_cfg.is_slv_active == 1) begin
    	  apb_slv_sqr 	= apb_slv_sequencer::type_id::create("apb_slv_sqr",this);
 		  apb_slv_drv 	= apb_slv_driver::type_id::create("apb_slv_drv",this);
 		end
@@ -42,7 +42,7 @@ class apb_slv_agent extends uvm_agent;
 	/****************************************************************/
 	function void connect_phase(uvm_phase phase);
 		super.connect_phase(phase);
-		if(apb_agnt_cfg.is_active == 1)
+		if(apb_agnt_cfg.is_slv_active == 1)
 		begin
 			apb_slv_drv.seq_item_port.connect(apb_slv_sqr.seq_item_export);
 		end

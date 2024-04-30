@@ -14,6 +14,7 @@ package apb_env_pkg;
    `include "apb_mst_driver.sv"
    `include "apb_mst_monitor.sv"
    `include "apb_mst_agent.sv"
+   `include "apb_mst_scrb.sv"
    `include "apb_slv_sequencer.sv"
    `include "apb_slv_driver.sv"
    `include "apb_slv_monitor.sv"

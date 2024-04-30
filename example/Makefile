@@ -82,13 +82,18 @@ BUILD_OPT := $(BUILD_OPT) +incdir+$(APB_UVC)/apb_config
 BUILD_OPT := $(BUILD_OPT) +incdir+$(APB_UVC)/apb_env
 BUILD_OPT := $(BUILD_OPT) +incdir+$(APB_UVC)/apb_interface
 BUILD_OPT := $(BUILD_OPT) +incdir+$(APB_UVC)/apb_sequence_lib                           
+BUILD_OPT := $(BUILD_OPT) +incdir+$(APB_UVC)/apb_scoreboard                           
 BUILD_OPT := $(BUILD_OPT) +incdir+$(APB_TEST)/
 BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_packages/apb_seq_pkg.sv
 BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_packages/apb_env_pkg.sv
 BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_intf.sv
-BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_master_bfm.sv
-BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_slave_bfm.sv
+BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_mst_driver_bfm.sv
+BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_mst_monitor_bfm.sv
+BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_slv_driver_bfm.sv
+BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_slv_monitor_bfm.sv
 BUILD_OPT := $(BUILD_OPT) $(APB_TEST)/apb_test_pkg.sv
+BUILD_OPT := $(BUILD_OPT) $(APB_TEST)/regblock/atxmega_spi_pkg.sv
+BUILD_OPT := $(BUILD_OPT) $(APB_TEST)/regblock/atxmega_spi.sv
 BUILD_OPT := $(BUILD_OPT) $(APB_TEST)/apb_tb_top.sv
 # Optimization options 
 ifeq ($(SIMULATOR), questa)
@@ -135,6 +140,7 @@ endif
 
 ifeq ($(SIMULATOR), questa)
 	SIM_OPT := $(SIM_OPT) -sv_seed random
+	SIM_OPT := $(SIM_OPT) -permit_unmatched_virtual_intf	
   ifeq ($(GUI), 1)
     SIM_OPT := $(SIM_OPT) -do "do wave.do; run -a; q"
   else
@@ -153,19 +159,21 @@ endif
 cov:
 	dve -covdir $(COMP_DIR)/simv.vdb -full64
 # Compile
+
 compile:
 ifeq ($(SIMULATOR), xcelium) 
 	$(XCMD) $(BUILD_OPT) -uvmaccess
 else
-	$(BUILD_CMD) $(BUILD_OPT)
+	$(BUILD_CMD) $(BUILD_OPT) +define+TB_RDL_DISABLE
 endif
-
+# BUILD_RDL := $(BUILD_RDL) +define+TB_MASTER_DRIVER_DISABLE
+BUILD_RDL := $(BUILD_RDL) +define+TB_SLAVE_DRIVER_DISABLE
+compile_rdl:
+	$(BUILD_CMD) $(BUILD_OPT) $(BUILD_RDL)
 # Optimize
 optimize:
 	$(OPTM_CMD) $(OPTM_OPT)
-
 # Run without wave
-run: build run_sim
 run_sim: 
 ifeq ($(SIMULATOR), questa) 
 	$(SIM_CMD) $(SIM_OPT) $(USR_OPT) $(ELAB_OPTS)
@@ -177,9 +185,9 @@ endif
 
 # Compile and optimize
 build: compile optimize
-
-# Build and run
-build_run_sim: build run_sim
+build_rdl : compile_rdl optimize
+run: build run_sim
+run_rdl: build_rdl run_sim
 
 # Clean
 clean:

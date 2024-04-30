@@ -9,9 +9,12 @@ class apb_agent_config extends uvm_component;
 /*-------------------------------------------------------------------------------
 -- Interface, port, fields
 -------------------------------------------------------------------------------*/
- virtual apb_master_bfm apb_mst_bfm;
- virtual apb_slave_bfm  apb_slv_bfm;
- bit                    is_active;
+ virtual apb_mst_driver_bfm apb_mst_drv_bfm;
+ virtual apb_mst_monitor_bfm apb_mst_mntr_bfm;
+ virtual apb_slv_driver_bfm  apb_slv_drv_bfm;
+ virtual apb_slv_monitor_bfm  apb_slv_mntr_bfm;
+ bit                    is_mst_active;
+ bit                    is_slv_active;
  int                    no_of_trans;
  string                 apb_ver = "APB3";
 /*-------------------------------------------------------------------------------

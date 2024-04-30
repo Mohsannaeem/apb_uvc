@@ -10,8 +10,14 @@ module apb_tb_top ();
 	import apb_test_pkg::*;
 	logic clk, resetn;
 	apb_intf apb_if(.clk(clk),.resetn(resetn));
-  apb_master_bfm apb_mst_bfm(apb_if);
-  apb_slave_bfm apb_slv_bfm(apb_if);
+  `ifndef TB_MASTER_DRIVER_DISABLE
+    apb_mst_driver_bfm  apb_mst_drv_bfm(apb_if);
+  `endif
+  apb_mst_monitor_bfm apb_mst_mntr_bfm(apb_if);
+  `ifndef TB_SLAVE_DRIVER_DISABLE
+    apb_slv_driver_bfm apb_slv_drv_bfm(apb_if);
+  `endif
+  apb_slv_monitor_bfm apb_slv_mntr_bfm(apb_if);
 	initial begin
 		clk =0; 
 		forever 
@@ -23,12 +29,35 @@ module apb_tb_top ();
 		resetn = 1;
 	end
 	initial begin 
-		uvm_config_db#(virtual apb_master_bfm)::set(null, "uvm_test_top", "apb_mst_bfm",apb_mst_bfm);
-    uvm_config_db#(virtual apb_slave_bfm)::set(null, "uvm_test_top", "apb_slv_bfm",apb_slv_bfm);
+		`ifndef TB_MASTER_DRIVER_DISABLE
+      uvm_config_db#(virtual apb_mst_driver_bfm)::set(null, "uvm_test_top", "apb_mst_drv_bfm",apb_mst_drv_bfm);
+    `endif
+    `ifndef TB_SLAVE_DRIVER_DISABLE
+      uvm_config_db#(virtual apb_slv_driver_bfm)::set(null, "uvm_test_top", "apb_slv_drv_bfm",apb_slv_drv_bfm);
+    `endif
+    uvm_config_db#(virtual apb_slv_monitor_bfm)::set(null, "uvm_test_top", "apb_slv_mntr_bfm",apb_slv_mntr_bfm);
+    uvm_config_db#(virtual apb_mst_monitor_bfm)::set(null, "uvm_test_top", "apb_mst_mntr_bfm",apb_mst_mntr_bfm);
 	end 
 	initial begin 
 		run_test("apb_base_test");
 	end
-
+  `ifndef TB_RDL_DISABLE
+    atxmega_spi_pkg::atxmega_spi__in_t hwif_in;
+    atxmega_spi_pkg::atxmega_spi__out_t hwif_out;
+    atxmega_spi i_atxmega_spi (
+      .clk          (clk          ), // TODO: Check connection ! Signal/port not matching : Expecting logic  -- Found forever 
+      .rst          (~resetn      ),
+      .s_apb_psel   (apb_if.psel   ),
+      .s_apb_penable(apb_if.penable),
+      .s_apb_pwrite (apb_if.pwrite ),
+      .s_apb_paddr  (apb_if.paddr  ),
+      .s_apb_pwdata (apb_if.pwdata ),
+      .s_apb_pready (apb_if.pready ),
+      .s_apb_prdata (apb_if.prdata ),
+      .s_apb_pslverr(apb_if.pslverr),
+      .hwif_in      (hwif_in      ),
+      .hwif_out     (hwif_out     )
+    );
+  `endif
 
 endmodule

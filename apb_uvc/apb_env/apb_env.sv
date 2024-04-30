@@ -12,6 +12,7 @@ class apb_env extends  uvm_component;
 apb_mst_agent apb_mst_agnt;
 apb_slv_agent apb_slv_agnt;
 apb_env_config env_cfg;
+apb_mst_scrb   mst_scrb;
 /*-------------------------------------------------------------------------------
 -- UVM Factory register
 -------------------------------------------------------------------------------*/
@@ -30,6 +31,7 @@ function void build_phase(uvm_phase phase);
 	`uvm_info(get_type_name(),"Build Phase Started",UVM_FULL)
 	apb_mst_agnt=apb_mst_agent::type_id::create("apb_mst_agnt",this);
 	apb_slv_agnt=apb_slv_agent::type_id::create("apb_slv_agnt",this);
+  mst_scrb    =apb_mst_scrb::type_id::create("mst_scrb",this);
 	if(!(uvm_config_db#(apb_env_config)::get(this, "", "env_cfg",env_cfg)))
       `uvm_fatal(get_type_name(),"Unable to get the env config")
   `uvm_info(get_type_name(),"Build Phase Ended",UVM_FULL)
@@ -38,6 +40,7 @@ function void build_phase(uvm_phase phase);
 endfunction : build_phase
 function void connect_phase(uvm_phase phase);
 	super.connect_phase(phase);
+   // apb_mst_agnt.apb_mst_mntr.mst_analysis_port.connect(mst_scrb.ap_im);
 endfunction : connect_phase
 
 task run_phase(uvm_phase phase);

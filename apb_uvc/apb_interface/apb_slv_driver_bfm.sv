@@ -1,4 +1,4 @@
-interface apb_slave_bfm(apb_intf apb_slv_if);
+interface apb_slv_driver_bfm(apb_intf apb_slv_if);
   task init_zeros();
     apb_slv_if.prdata <= 0;
     apb_slv_if.pready <= 0;
@@ -42,28 +42,5 @@ interface apb_slave_bfm(apb_intf apb_slv_if);
     apb_slv_if.pready <=0;
   endtask : access_phase
 
-  task monitor(output logic[31:0] address,
-               output logic[31:0] wdata,
-               output logic[31:0] rdata,
-               output logic       rw,
-               output logic[31:0] delay,
-               output logic       slverr
-                );
-    @(posedge apb_slv_if.clk);
-    wait(apb_slv_if.psel);
-    @(posedge apb_slv_if.clk);
-    wait(apb_slv_if.penable);
-    @(posedge apb_slv_if.clk);
-    address = apb_slv_if.paddr;
-    rw = apb_slv_if.pwrite;
-    wdata  = apb_slv_if.pwdata;
-    @(posedge apb_slv_if.clk)
-    wait(apb_slv_if.pready);
-    $display("Time %t",$time(),"Ready Asserted in Slave Monitor");
-    delay=0;
-    slverr = apb_slv_if.pslverr;
-    rdata  = apb_slv_if.prdata;
-
-   endtask : monitor 
 
 endinterface

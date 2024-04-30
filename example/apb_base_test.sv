@@ -49,9 +49,11 @@ task run_phase(uvm_phase phase);
       	apb_mst_virt_seq.no_of_transaction=5;
         apb_mst_virt_seq.start(env.apb_mst_agnt.apb_mst_sqr);
       end
+      `ifndef TB_SLAVE_DRIVER_DISABLE
       begin 
       	apb_slv_rnd_dly_seq.start(env.apb_slv_agnt.apb_slv_sqr);
       end
+      `endif
 	   join
     end
     begin  
@@ -63,13 +65,25 @@ task run_phase(uvm_phase phase);
    `uvm_info(get_type_name(),"Run Phase Ended",UVM_FULL)
 endtask : run_phase
 function set_env_config(apb_env_config env_cfg);
-   `uvm_info(get_type_name(),"Dummy Function",UVM_FULL)
-   if(!(uvm_config_db#(virtual apb_master_bfm)::get(this, "", "apb_mst_bfm",env_cfg.apb_agnt_cfg.apb_mst_bfm ))) 
+   
+  if(!(uvm_config_db#(virtual apb_mst_monitor_bfm)::get(this, "", "apb_mst_mntr_bfm",env_cfg.apb_agnt_cfg.apb_mst_mntr_bfm ))) 
       `uvm_fatal(get_type_name(), "Unable to find the apb_master_bfm from config db");
-  
-  if(!(uvm_config_db#(virtual apb_slave_bfm)::get(this, "", "apb_slv_bfm",env_cfg.apb_agnt_cfg.apb_slv_bfm )))
-      `uvm_fatal(get_type_name(), "Unable to find the apb_slave_bfm from config db");
-  env_cfg.apb_agnt_cfg.is_active=1;
+  if(!(uvm_config_db#(virtual apb_slv_monitor_bfm)::get(this, "", "apb_slv_mntr_bfm",env_cfg.apb_agnt_cfg.apb_slv_mntr_bfm )))
+      `uvm_fatal(get_type_name(), "Unable to find the apb_slv_monitor_bfm from config db");
+  `ifndef TB_MASTER_DRIVER_DISABLE
+   if(!(uvm_config_db#(virtual apb_mst_driver_bfm)::get(this, "", "apb_mst_drv_bfm",env_cfg.apb_agnt_cfg.apb_mst_drv_bfm ))) 
+      `uvm_fatal(get_type_name(), "Unable to find the apb_mst_drv_bfm from config db");
+ `endif 
+ `ifndef TB_SLAVE_DRIVER_DISABLE
+   if(!(uvm_config_db#(virtual apb_slv_driver_bfm)::get(this, "", "apb_slv_drv_bfm",env_cfg.apb_agnt_cfg.apb_slv_drv_bfm )))
+      `uvm_fatal(get_type_name(), "Unable to find the apb_slv_drv_bfm from config db");
+ `endif
+  env_cfg.apb_agnt_cfg.is_mst_active=1;
+  `ifndef TB_SLAVE_DRIVER_DISABLE
+    env_cfg.apb_agnt_cfg.is_slv_active=1;
+  `else 
+    env_cfg.apb_agnt_cfg.is_slv_active=0;
+  `endif
   env_cfg.apb_agnt_cfg.no_of_trans=10;
   uvm_config_db#(apb_env_config)::set(this, "env*","env_cfg",env_cfg );
 endfunction : set_env_config
