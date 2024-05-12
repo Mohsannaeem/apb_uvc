@@ -8,7 +8,7 @@
 module apb_tb_top ();
 	import uvm_pkg::*;
 	import apb_test_pkg::*;
-	logic clk, resetn;
+  logic clk, resetn;
 	apb_intf apb_if(.clk(clk),.resetn(resetn));
   `ifndef TB_MASTER_DRIVER_DISABLE
     apb_mst_driver_bfm  apb_mst_drv_bfm(apb_if);
@@ -39,7 +39,7 @@ module apb_tb_top ();
     uvm_config_db#(virtual apb_mst_monitor_bfm)::set(null, "uvm_test_top", "apb_mst_mntr_bfm",apb_mst_mntr_bfm);
 	end 
 	initial begin 
-		run_test("apb_base_test");
+		run_test("");
 	end
   `ifndef TB_RDL_DISABLE
     atxmega_spi_pkg::atxmega_spi__in_t hwif_in;

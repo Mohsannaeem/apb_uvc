@@ -77,7 +77,8 @@ class apb_read_sequence extends  apb_mst_base_sequence;
 /*-------------------------------------------------------------------------------
 -- Interface, port, fields
 -------------------------------------------------------------------------------*/
-  apb_mst_seq_item apb_seq_itm;
+  apb_mst_seq_item apb_seq_itm_req;
+  apb_mst_seq_item apb_seq_itm_rsp;
 
 /*-------------------------------------------------------------------------------
 -- UVM Factory register
@@ -96,12 +97,14 @@ class apb_read_sequence extends  apb_mst_base_sequence;
   task body();
     `uvm_info(get_type_name(),"Body Task started",UVM_FULL);
      
-    apb_seq_itm=apb_mst_seq_item::type_id::create("apb_seq_itm");
-    start_item(apb_seq_itm);
-    if(!(apb_seq_itm.randomize() with {apb_seq_itm.write==0;
-                                      apb_seq_itm.b2b_trans==0;}))
+    apb_seq_itm_req = apb_mst_seq_item::type_id::create("apb_seq_itm_req");
+    apb_seq_itm_rsp = apb_mst_seq_item::type_id::create("apb_seq_itm_rsp");
+    start_item(apb_seq_itm_req);
+    if(!(apb_seq_itm_req.randomize() with {apb_seq_itm_req.write==0;
+                                      apb_seq_itm_req.b2b_trans==0;}))
       `uvm_fatal(get_type_name(),"Unable to randomize the seq item");
-    finish_item(apb_seq_itm);  
+    finish_item(apb_seq_itm_req);
+    get_response(apb_seq_itm_rsp);  
   endtask : body
 
 endclass : apb_read_sequence
@@ -144,7 +147,8 @@ class apb_b2b_read_sequence extends  apb_mst_base_sequence;
 /*-------------------------------------------------------------------------------
 -- Interface, port, fields
 -------------------------------------------------------------------------------*/
-  apb_mst_seq_item apb_seq_itm;
+  apb_mst_seq_item apb_seq_itm_req;
+  apb_mst_seq_item apb_seq_itm_rsp;
 
 /*-------------------------------------------------------------------------------
 -- UVM Factory register
@@ -161,12 +165,14 @@ class apb_b2b_read_sequence extends  apb_mst_base_sequence;
   endfunction : new
 
   task body();
-    apb_seq_itm= apb_mst_seq_item::type_id::create("apb_seq_itm");
-    start_item(apb_seq_itm);
-    if(!(apb_seq_itm.randomize() with {apb_seq_itm.write==0;
-                                  apb_seq_itm.b2b_trans == 1;}))
-      `uvm_fatal(get_type_name(),"Unable to randomize the apb_seq_itm");
-    finish_item(apb_seq_itm);
+    apb_seq_itm_req= apb_mst_seq_item::type_id::create("apb_seq_itm_req");
+    apb_seq_itm_rsp= apb_mst_seq_item::type_id::create("apb_seq_itm_rsp");
+    start_item(apb_seq_itm_req);
+    if(!(apb_seq_itm_req.randomize() with {apb_seq_itm_req.write==0;
+                                  apb_seq_itm_req.b2b_trans == 1;}))
+      `uvm_fatal(get_type_name(),"Unable to randomize the apb_seq_itm_req");
+    finish_item(apb_seq_itm_req);
+    get_response(apb_seq_itm_rsp);
   endtask : body
 
 endclass : apb_b2b_read_sequence

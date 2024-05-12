@@ -13,7 +13,7 @@ virtual interface apb_mst_monitor_bfm apb_mst_mntr_bfm;
 apb_mst_seq_item apb_item;
 apb_agent_config apb_agnt_cfg;
 int write_counter = 0,read_counter =0;
-
+uvm_analysis_port #(apb_mst_seq_item) mst_analysis_port;
 /*-------------------------------------------------------------------------------
 -- UVM Factory register
 -------------------------------------------------------------------------------*/
@@ -32,6 +32,7 @@ function void build_phase (uvm_phase phase);
   `uvm_info(get_type_name(),"Build Phase Started",UVM_FULL);
   super.build_phase(phase);
   apb_item = apb_mst_seq_item::type_id::create("apb_item",this);
+  mst_analysis_port = new("mst_analysis_port",this);
   if(!(uvm_config_db#(apb_agent_config)::get(this, "", "agnt_cfg",apb_agnt_cfg)))
         `uvm_fatal(get_type_name(),"Unable to get the agent config");
     apb_mst_mntr_bfm = apb_agnt_cfg.apb_mst_mntr_bfm; 
@@ -49,11 +50,13 @@ task run_phase(uvm_phase phase);
     if(apb_item.write) begin
       write_counter++;
       `uvm_info(get_type_name(),$sformatf("\n/***** APB Write Transaction =%d",write_counter),UVM_MEDIUM);
+      mst_analysis_port.write(apb_item);
       apb_item.print();
     end
     else begin
       read_counter++;
       `uvm_info(get_type_name(),$sformatf("\n/***** APB Read Transaction =%d",read_counter),UVM_MEDIUM);
+      mst_analysis_port.write(apb_item);
       apb_item.print();
     end 
   end

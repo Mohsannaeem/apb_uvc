@@ -5,8 +5,11 @@ WHOAMI := $(shell whoami)
 PWD := $(shell pwd)
 DATE := $(shell date '+%Y_%m%d_%H%M_%S')
 
-TEST_DIR := $(shell pwd)
-COMP_DIR := $(APB_TEST)
+ABP_UVC  ?="../../apb_uvc"
+TB_TOP 	 ?= "../tb_top"
+TEST_DIR ?= "../tests"
+COMP_DIR := "./"
+
 SUB_DIRS := $(shell ls $(REG_DIR) )
 
 # SIMULATOR = questa for questa and vcs for vcs
@@ -27,10 +30,7 @@ DATABASE := apb_tb_top_db
 USR_OPT := $(addprefix , $(OPT))
 USR_LOG := $(addprefix , $(LOG))
 ## Get test name from test.sv if not supplied
-# ifeq "$(TEST_NAME)" ""
-#   TEST_NAME := $(shell grep -se "^class.*base_test" test.sv | sed -e "s/^class//" | sed -e "s/extends .*base_test;//" | sed -e "s/ *//g")
-# endif
-TEST_NAME = apb_base_test
+TEST_NAME ?= apb_b2b_test
 # SEED
 SEED_NUM := $(shell python3 -c 'from random import randint; print(randint(0, 1000))')
 SEED_OPT := $(addprefix , $(SEED))
@@ -83,7 +83,7 @@ BUILD_OPT := $(BUILD_OPT) +incdir+$(APB_UVC)/apb_env
 BUILD_OPT := $(BUILD_OPT) +incdir+$(APB_UVC)/apb_interface
 BUILD_OPT := $(BUILD_OPT) +incdir+$(APB_UVC)/apb_sequence_lib                           
 BUILD_OPT := $(BUILD_OPT) +incdir+$(APB_UVC)/apb_scoreboard                           
-BUILD_OPT := $(BUILD_OPT) +incdir+$(APB_TEST)/
+BUILD_OPT := $(BUILD_OPT) +incdir+$(TEST_DIR)/
 BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_packages/apb_seq_pkg.sv
 BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_packages/apb_env_pkg.sv
 BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_intf.sv
@@ -91,10 +91,11 @@ BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_mst_driver_bfm.sv
 BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_mst_monitor_bfm.sv
 BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_slv_driver_bfm.sv
 BUILD_OPT := $(BUILD_OPT) $(APB_UVC)/apb_interface/apb_slv_monitor_bfm.sv
-BUILD_OPT := $(BUILD_OPT) $(APB_TEST)/apb_test_pkg.sv
-BUILD_OPT := $(BUILD_OPT) $(APB_TEST)/regblock/atxmega_spi_pkg.sv
-BUILD_OPT := $(BUILD_OPT) $(APB_TEST)/regblock/atxmega_spi.sv
-BUILD_OPT := $(BUILD_OPT) $(APB_TEST)/apb_tb_top.sv
+BUILD_OPT := $(BUILD_OPT) $(TB_TOP)/regblock/atxmega_spi_pkg.sv
+BUILD_OPT := $(BUILD_OPT) $(TB_TOP)/regblock/atxmega_spi.sv
+BUILD_OPT := $(BUILD_OPT) $(TB_TOP)/atxmega_spi_uvm_pkg.sv
+BUILD_OPT := $(BUILD_OPT) $(TEST_DIR)/apb_test_pkg.sv
+BUILD_OPT := $(BUILD_OPT) $(TB_TOP)/apb_tb_top.sv
 # Optimization options 
 ifeq ($(SIMULATOR), questa)
   OPTM_OPT := +acc apb_tb_top -o $(DATABASE) -designfile design.bin -work $(COMP_DIR)/work
@@ -191,15 +192,15 @@ run_rdl: build_rdl run_sim
 
 # Clean
 clean:
-	@rm -rf $(APB_UVC)/verif/cuboid_1/test/*/cm.log 
-	@rm -rf $(APB_UVC)/verif/cuboid_1/test/*/DVEfiles/ 
-	@rm -rf $(APB_UVC)/verif/cuboid_1/test/*/inter.vpd 
-	@rm -rf $(APB_UVC)/verif/cuboid_1/test/*/*.log 
-	@rm -rf $(APB_UVC)/verif/cuboid_1/test/*/ucli.key
-	@rm -rf $(APB_UVC)/verif/cuboid_1/test/*/wlft*
-	@rm -rf $(APB_UVC)/verif/cuboid_1/test/*/vsim.wlf
-	@rm -rf $(APB_UVC)/verif/cuboid_1/test/*/*.bin
-	@rm -rf $(APB_UVC)/verif/cuboid_1/test/*/tr_db.log
+	@rm -rf $(APB_UVC)/*/cm.log 
+	@rm -rf $(APB_UVC)/*/DVEfiles/ 
+	@rm -rf $(APB_UVC)/*/inter.vpd 
+	@rm -rf $(APB_UVC)/*/*.log 
+	@rm -rf $(APB_UVC)/*/ucli.key
+	@rm -rf $(APB_UVC)/*/wlft*
+	@rm -rf $(APB_UVC)/*/vsim.wlf
+	@rm -rf $(APB_UVC)/*/*.bin
+	@rm -rf $(APB_UVC)/*/tr_db.log
 	@rm -rf $(COMP_DIR)/compile.log
 	@rm -rf $(COMP_DIR)/work
 	@rm -rf $(COMP_DIR)/design.bin
@@ -217,4 +218,5 @@ clean:
 	@rm -rf $(COMP_DIR)/*.log 
 	@rm -rf $(COMP_DIR)/scrbrd_fd 
 	@rm -rf $(COMP_DIR)/*.key
+	@rm -rf $(COMP_DIR)/*.vstf
 

@@ -11,7 +11,7 @@ class apb_slv_base_sequence extends uvm_sequence#(apb_slv_seq_item);
 -------------------------------------------------------------------------------*/
 	apb_slv_seq_item apb_slv_seq_req;
 	apb_slv_seq_item apb_slv_seq_rsp;
-
+  bit [31:0]       memory [int]   ;
 /*-------------------------------------------------------------------------------
 -- UVM Factory register
 -------------------------------------------------------------------------------*/
@@ -41,17 +41,20 @@ class apb_slv_base_sequence extends uvm_sequence#(apb_slv_seq_item);
 			start_item(apb_slv_seq_rsp);
 			`uvm_info(get_type_name,"APB Response Start",UVM_FULL);
 			if(apb_slv_seq_req.rw) begin 
-				//TODO : Think about memory here or in slave driver
-				// memory[apb_slv_seq_req.addr]=apb_slv_req.data
+				memory[apb_slv_seq_req.address]=apb_slv_seq_req.data;
 			end
       else begin 
+        if(!memory.exists(apb_slv_seq_req.address)) begin
+          memory[apb_slv_seq_req.address] = 32'hdeadbeef;
+        end
         `uvm_info(get_type_name(),"Read Request Recieved",UVM_FULL);
       end  
 			if(!(apb_slv_seq_rsp.randomize())) begin
         `uvm_fatal(get_type_name(),"Response randomize failed");
       end
-      apb_slv_seq_rsp.address=apb_slv_seq_req.address;
+      apb_slv_seq_rsp.address = apb_slv_seq_req.address;
       apb_slv_seq_rsp.rw = apb_slv_seq_req.rw;
+      if(!apb_slv_seq_rsp.rw) apb_slv_seq_rsp.rdata = memory[apb_slv_seq_rsp.address];
                                             
 			apb_slv_seq_rsp.print();
 			finish_item(apb_slv_seq_rsp);

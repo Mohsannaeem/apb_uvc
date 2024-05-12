@@ -11,6 +11,8 @@ class apb_env_config extends  uvm_component;
 -------------------------------------------------------------------------------*/
 	uvm_cmdline_processor cmpld;
   apb_agent_config apb_agnt_cfg;
+  // atxmega_spi      regmodel;
+  uvm_reg_block      regmodel;
 /*-------------------------------------------------------------------------------
 -- UVM Factory register
 -------------------------------------------------------------------------------*/

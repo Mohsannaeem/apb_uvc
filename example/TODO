@@ -13,15 +13,13 @@
 	14.Support the consective write transaction in driver[Done] 
 	15.Support random delay in slave sequence [Done]
 	16.Support random slv error in slave sequence and well as in master driver [Done]
-
-	17.Support APB4 Interface from agent configuration and add the factory override for the sequence item
+	17.Slave Sequence should have a memory for APB read and write.[Done]
 	18.Add Assertions in apb interface [Done]
 	19.Add Call Backs  for user and Error Injections
 	20.Add the Scoreboard which will have memory model to checked write data while reading 
-	21.Need to add coverage  monitors
-
-	Should I really do this ??
-	1. Slave Sequence should have a memory for AXI read and write.
-	2. Peak RDL Integration 
-	4. RAL testing 
-
+	21.Need to add the Read response in master sequence [Done] 
+	22.Need to add coverage monitors
+	23.Peak RDL Integration [Done] 
+	24.Seprate the base sequence for non-ral and ral tests[Done]
+	25.RAL testing 
+	https://www.slideshare.net/Ash-Ash/session-0-verificationplanningsvuvmiti2020
